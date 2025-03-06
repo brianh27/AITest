@@ -21,7 +21,7 @@ while cost>0.15:
     #random.shuffle(combined)
     #temp, expected = zip(*combined)
 
-    # Convert tuples back to lists
+    
     
     
     
@@ -52,17 +52,17 @@ for a in range(len(testdata)):
     else:
         testdata.append([temp[a][0],temp[a][1],'blue'])
 testdata=training+testdata
-# Plot the initial points
+
 scatter = ax.scatter(
-    [x for x, y, color in testdata],  # x-coordinates
-    [y for x, y, color in testdata],  # y-coordinates
-    c=[color for x, y, color in testdata],  # colors
+    [x for x, y, color in testdata],  
+    [y for x, y, color in testdata],  
+    c=[color for x, y, color in testdata],  
     s=50
 )
 
 
 
-# Function to update the points live
+
 def update_points():
     while True:
         
@@ -75,16 +75,15 @@ def update_points():
                 else:
                     testdata[a*20+b][2]='black'
         
-        # Update the scatter plot data
-        scatter.set_offsets(([[x, y] for x, y, color in testdata]))  # Update positions
-        scatter.set_color([color for x, y, color in testdata])  # Update colors
+        scatter.set_offsets(([[x, y] for x, y, color in testdata]))  
+        scatter.set_color([color for x, y, color in testdata])  
         
-        # Refresh the plot
+        
         fig.canvas.draw_idle()
         
-        # Pause for 1 second before the next update
+        
         plt.pause(0.1)
 
-# Start live updates
-plt.show(block=False)  # Show the plot without blocking
+
+plt.show(block=False)  
 update_points()
