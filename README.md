@@ -14,7 +14,7 @@ I have a very simple neural network. It has 2 input layers, they are x and y (th
 ![image](https://github.com/user-attachments/assets/564285eb-06e7-4953-962f-2ddee4307f4a)
 
 Each node has weights and biases which alter the input values, and output the probability that the point would correctly classify as 0 or 1 (balloon or not). However, how do we make sure that the output is 0 or 1. We need to at an activation function.
-The activation function is similar to a neuron in your brain, it takes some input for it to fire. We can do the same thing for each node. 
+The activation function is similar to a neuron in your brain, it takes some input for it to fire. We can do the same thing for each node. We need the activation function to ensure non-linearity. Nothing in the real world is ever that simple.
 I use a sigmoid function to ease the activation in. The reason we need this easing is so that small changes in the neural network won't result in immiediate big changes for the output (this is important for training the network).
 
 If we just plug in random weights and biases, then the network will output random values, that have little correlation. So we need to find a way to determine a network's effectiveness. You can use a cost function.
